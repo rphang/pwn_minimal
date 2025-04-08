@@ -9,8 +9,8 @@ RUN pip install --upgrade pip && \
     pip install --upgrade pwntools
 RUN apt-get install -y vim
 
-COPY ./vulnerable.c /vulnerable.c
-COPY ./exploit.py /exploit.py
+COPY ./vulnerable.c /root/vulnerable.c
+COPY ./exploit.py /root/exploit.py
 RUN gcc -o vulnerable -no-pie -fno-stack-protector vulnerable.c -w && chmod +x vulnerable
 RUN echo "kernel.randomize_va_space = 0" > /etc/sysctl.d/00-disable-randomize-va-space.conf && \
     echo "kernel.randomize_va_space = 0" > /etc/sysctl.conf && \
