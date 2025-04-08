@@ -20,7 +20,3 @@ RUN echo "vm.mmap_min_addr = 0" > /etc/sysctl.d/00-mmap-min-addr.conf && \
     echo "vm.mmap_min_addr = 0" > /etc/sysctl.conf && \
     sysctl -p /etc/sysctl.d/00-mmap-min-addr.conf && \
     sysctl -p /etc/sysctl.conf
-RUN echo "kernel.exec-shield = 0" > /etc/sysctl.d/00-disable-exec-shield.conf && \
-    echo "kernel.exec-shield = 0" > /etc/sysctl.conf && \
-    sysctl -p /etc/sysctl.d/00-disable-exec-shield.conf && \
-    sysctl -p /etc/sysctl.conf
