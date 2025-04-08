@@ -11,6 +11,7 @@ RUN apt-get install -y vim
 
 COPY ./vulnerable.c /root/vulnerable.c
 COPY ./exploit.py /root/exploit.py
+COPY ./extra.py /root/extra.py
 COPY ./Makefile /root/Makefile
 RUN make
 RUN chmod +x /root/vulnerable
