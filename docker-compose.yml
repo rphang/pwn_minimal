@@ -1,0 +1,11 @@
+services:
+  app:
+    command: tail -f /dev/null
+    build:
+      context: .
+      dockerfile: Dockerfile
+    security_opt:
+            - seccomp:unconfined
+    cap_add:
+            - SYS_PTRACE
+    platform: linux/amd64
